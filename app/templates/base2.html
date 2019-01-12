@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
+</head>
+ <style>
+		table {
+			border-collapse: collapse;
+			border: 2px solid black;
+			float: left;
+		}
+		th, td {
+			border: 1px solid #ddd;
+		}
+		
+		.switch {
+		  vertical-align: middle;
+		  position: relative;
+		  display: block;
+		  width: 100px;
+		  height: 40px;
+		  padding: 3px;
+		  margin: 0 10px 10px 0;
+		  background: linear-gradient(to bottom, #eeeeee, #ccc 25px);
+		  background-image: -webkit-linear-gradient(top, #eeeeee, #ccc 25px);
+		  border-radius: 25px;
+		  box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+		  cursor: pointer;
+		}
+		.switch-input {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  opacity: 0;
+		}
+		.switch-label {
+		  position: relative;
+		  display: block;
+		  height: inherit;
+		  font-size: 20px;
+		  color:#0000CD;
+		  background: #eceeef;
+		  border-radius: inherit;
+		  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+		}
+		.switch-label:before, .switch-label:after {
+		  position: absolute;
+		  top: 50%;
+		  margin-top: -.5em;
+		  line-height: 1;
+		  -webkit-transition: inherit;
+		  -moz-transition: inherit;
+		  -o-transition: inherit;
+		  transition: inherit;
+		}
+		.switch-label:before {content: attr(data-on);right: 11px;color: green;}
+		.switch-label:after {content: attr(data-off);left: 11px;color: red;}
+		.switch-input:checked ~ .switch-label {
+		  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+		}
+		.switch-input:checked ~ .switch-label:before {opacity: 0;}
+		.switch-input:checked ~ .switch-label:after {opacity: 1;}
+		.switch-handle {
+		  position: absolute;
+		  top: 4px;
+		  left: 4px;
+		  width: 45px;
+		  height: 37px;
+		  background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+		  background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+		  border-radius: 100%;
+		  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+		}
+		.switch-handle:before {
+		  content: "";
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  margin: -6px 0 0 -6px;
+		  width: 12px;
+		  height: 12px;
+		  background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+		  background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+		  border-radius: 6px;
+		  box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+		}
+		.switch-input:checked ~ .switch-handle {
+		  left: 56px;
+		}
+    .switch-label, .switch-handle {
+      transition: All 0.4s ease;
+      -webkit-transition: All 0.4s ease;
+      -moz-transition: All 0.4s ease;
+      -o-transition: All 0.4s ease;
+    }
+    th {
+    background-color: #77dd77;
+	}
+</style>
+
+<html>
+    <head>
+      	<H1>2016 Cleveland Cavalier Salaries- A Demo of Statistical Principals</H1>
+    </head>
+    <body>
+        
+        <hr>
+        {% block content %}{% endblock %}
+		
+        <div class="row">
+          <div class="col-md-3">
+          <h2></h2>
+            <h2></h2>
+            {{ table1|safe }}
+            </div>
+            <div class="col-md-2">
+              <h2></h2>
+                <h2></h2>
+            {{ table2|safe }}
+            </div>
+            <div class="col-md-6">
+            <img src="data:image/png;base64,{{ result }}">
+            </div>
+        </div>
+    </body>
+</html>

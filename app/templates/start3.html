@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.lebron_status.label}}<br>
+            {{ form.lebron_status }}
+        </p>
+		<p>
+            {{ form.flat_raise.label}}<br>
+            {{ form.flat_raise }}
+        </p>
+		<p>
+            {{ form.scale_raise.label}}<br>
+            {{ form.scale_raise }}
+        </p>
+        
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

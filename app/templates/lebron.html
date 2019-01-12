@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
+</head>
+ <style>
+    table {
+        border-collapse: collapse;
+        border: 2px solid black;
+        float: left;
+    }
+    th, td {border: 1px solid #ddd;}
+    th {background-color: #77dd77;}
+    p.indent{ padding-left:1.8em}
+</style>
+
+<html>
+    <head>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <h2><b>&ensp;2016 Cleveland Cavalier Salaries:</b></h2> 
+        <h3>&ensp;A Demo of Some Basic Statistical Principals</h3> 
+    </head>
+    <body>
+         <br>
+    <form action="http://localhost:5000/index" method=post novalidate >
+<div class="row">
+		 <div class="col-3" >
+             <br><br><br><br>
+            &emsp; &emsp; Lebron Status:<b>{{l_status}}</b><br>
+			&emsp; &emsp; Last Flat Raise:<b>{{f_raise}}</b><br>
+            &emsp; &emsp; Last Scale Raise:<b>{{s_raise}}</b>
+		 </div>
+          
+		 <div class="col-3">
+             <p class="text-right">{{ form.lebron_status.label}}: {{ form.lebron_status}} <br>
+             {{ form.flat_raise.label}}: {{ form.flat_raise }} <br>
+             {{ form.scale_raise.label}}: {{ form.scale_raise }} <br>
+             {{ form.reset_salaries.label}}: {{ form.reset_salaries }} <br>
+                 {{ form.submit() }}</p>
+          </div>
+        
+        <div class="col-5 offset-1">
+             <br><br><br><br><br>{{ table2|safe }}
+        </div>
+         
+ </div>
+ </form>
+     
+        
+        <div class="row">
+            <div class="col-md-3">
+                <div class="col-md-12 offset-md-1">
+                    {{ table1|safe }}
+                </div>
+            </div>
+            <div class="col-9">     
+                    <img src="data:image/png;base64,{{ result }}">
+            </div>
+        </div>
+    </body>
+</html>
