@@ -1,4 +1,4 @@
-pyyaml==4.2b1
+
 alabaster==0.7.8
 alembic==1.0.5
 apturl==0.5.2
@@ -89,7 +89,7 @@ python-debian==0.1.32
 python-editor==1.0.3
 pytz==2018.7
 pyxdg==0.25
-PyYAML==3.12
+PyYAML==4.2b1
 pyzmq==16.0.2
 QtAwesome==0.4.4
 qtconsole==4.3.1
